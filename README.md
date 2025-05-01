@@ -1,60 +1,105 @@
-Baltimore Transportation Analysis
-Project Overview
-This repository contains an in-depth examination of transportation issues in Baltimore, including data analysis, modeling, and visualization tools.
+# Baltimore Transportation Analysis
 
-Repository Structure
-Data Files
-2025_Problem_D_Data: Contains primary datasets for analysis
+## Project Overview
+This project presents a comprehensive analysis of Baltimore's transportation infrastructure, focusing on road networks, public transit systems, and traffic patterns. Using network analysis, geospatial data processing, and machine learning techniques, we identify critical bottlenecks, optimize bus routes, and predict traffic flows across the city.
 
-Geospatial Data:
+## Key Features
+- Graph-based representation of Baltimore's road network
+- Analysis of Average Annual Daily Traffic (AADT) patterns
+- Public transportation optimization via bus stop importance metrics
+- Geospatial visualization of transportation data
+- Machine learning models for traffic prediction
 
-graph.geojson
+## Repository Structure
 
-nodes.geojson
+### Data Files
+- **2025_Problem_D_Data/**: Primary datasets for analysis
+  - `Bus_Routes.csv`: Public transit route information
+  - `Bus_Stops.csv`: Bus stop locations and ridership data
+  - `Edge_Names_With_Nodes.csv`: Road segment identifiers
+  - `edges_drive.csv`: Road network connection data
+  - `MDOT_SHA_Annual_Average_Daily_Traffic_Baltimore.csv`: Traffic volume data
+  - `nodes_all.csv` & `nodes_drive.csv`: Intersection nodes data
 
-path.geojson
+### Geospatial Data
+- `graph.geojson`: Complete network visualization
+- `nodes.geojson`: Network intersection points
+- `path.geojson`: Specific route visualizations
 
-Analysis Scripts
-analysis.py / analysis.pymb: Main analysis scripts
+### Analysis Scripts
+- `graph.py`: Core network construction and analysis
+  - Creates directed graph representation
+  - Calculates network metrics
+  - Generates geospatial visualizations
+- `bus.py`: Public transit analysis
+  - Evaluates bus stop importance
+  - Analyzes route efficiency
+  - Identifies key transit hubs
+- `analysis.py`/`analysis.ipynb`: Main analysis workflows
+- `train.ipynb`: Model training for traffic prediction
+- `prediction.ipynb`: Traffic flow forecasting
 
-bus.py: Transportation-specific analysis
+### Outputs
+- **figures/**: Visualization outputs
+  - Network topology visualizations
+  - Traffic heatmaps
+  - Distribution analyses
+  - Bottleneck identification
+- **models/**: Trained machine learning models
+  - Traffic prediction models
+  - Network flow optimizers
 
-graph.py: Geospatial data processing
+## Getting Started
 
-prediction.hymb: Predictive modeling
+### Requirements
+- Python 3.8+
+- NetworkX
+- Pandas
+- GeoPandas
+- Matplotlib
+- TensorFlow/Keras
+- NumPy
+- tqdm
 
-train.bymb: Model training scripts
+### Installation
+1. Clone this repository
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Outputs
-figures/: Visualization outputs
+### Usage
+To generate network visualizations and basic metrics:
+```bash
+python graph.py
+```
 
-models/: Trained model files
+To analyze bus transportation system:
+```bash
+python bus.py
+```
 
-Getting Started
-Requirements
-Python 3.x
+For comprehensive analysis, open and run the Jupyter notebooks:
+- `analysis.ipynb`: Overall network analysis
+- `train.ipynb`: Model training
+- `prediction.ipynb`: Traffic prediction
 
-GeoPandas (for geospatial analysis)
+## Key Findings
+- Identified the top 20 traffic bottlenecks in Baltimore's road network
+- Analyzed traffic patterns across urban and rural areas
+- Quantified the impact of major tunnels (Fort McHenry, Harbor) on traffic flow
+- Created predictive models for future traffic volume
 
-Other dependencies listed in requirements.txt
+## Future Work
+- Real-time traffic optimization algorithms
+- Integration with weather data for condition-based predictions
+- Multi-modal transportation planning
 
-Installation
-Clone this repository
+## Contributing
+This project was developed for the 2025 Mathematical Contest in Modeling (MCM) / Interdisciplinary Contest in Modeling (ICM).
 
-Install required packages: pip install -r requirements.txt
+## Team
+ICM Team - Baltimore Transportation Analysis
 
-Usage
-Run the main analysis script:
-
-bash
-python analysis.py
-Contributing
-This project is currently maintained by Final_ICM team. Contributions are welcome through pull requests.
-
-Project Status
-Last Updated: 1 minute ago (as of this README creation)
-
-Activity: 1 watching
-
-License
-Specify your license here (e.g., MIT, Apache 2.0
+## License
+[Specify your license here]
